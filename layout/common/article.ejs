@@ -9,7 +9,7 @@
     <% } %>
     <div class="card-content article <%= post.hasOwnProperty('direction') ? post.direction : '' %>">
         <% if (post.layout != 'page') { %>
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+        <div class="level article-meta is-size-7 is-mobile is-overflow-x-auto">
             <div class="level-left">
                 <% if (post.author){ %>
                 <div class="level-item"><%= post.author %></div>
