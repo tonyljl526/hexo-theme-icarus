@@ -22,8 +22,18 @@
     <section class="section">
         <div class="container">
             <div class="columns">
+                <% if (page.layout !== 'post') { %>
                 <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
+                <% } %>
+
+                <!-- 自定义：post 页面右侧官宽度 66.7% -->
+                <% if (page.layout === 'post') { %>
+                <div style="width: 66.7%!important;" class="column <%= main_column_class() %> has-order-2 column-main">
+                    <%- body %></div>
+                <% } %>
+
                 <%- _partial('common/widget', { position: 'left' }) %>
+                <!-- 自定义：post 页面不展示右侧 -->
                 <% if (page.layout !== 'post') { %>
                 <%- _partial('common/widget', { position: 'right' }) %>
                 <% } %>
